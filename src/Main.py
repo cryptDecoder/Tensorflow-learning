@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 from rich.console import Console
 from selectmenu import SelectMenu
 
+from basicPython import basics
+
 
 def menuOptions():
     console = Console()
@@ -14,7 +16,23 @@ def menuOptions():
         "3. Advanced Python"
     ])
     result = menu.select("Choice languages")
-    return result
+
+    if result == "1. Basic Python":
+        console.log(":computer: Welcome to Basic python section", style="BOLD Cyan")
+        submenu = SelectMenu()
+        submenu.add_choices([
+            "1. Python Introduction",
+            "2. Python Flow Control",
+            "3. Python Functions",
+            "4. Python Datatypes",
+            "5. Python Files",
+            "6. Python Object & Class",
+            "7. Python Advanced Topics",
+            "8. Python Date and time"
+        ])
+        basicTopics = submenu.select("Choice topic to learn")
+        if basicTopics == "1. Python Introduction":
+            basics.helloPython()
 
 
 if __name__ == '__main__':
