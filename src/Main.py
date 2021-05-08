@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from rich.console import Console
 from selectmenu import SelectMenu
 
+from animationpython import animatedfigures
 from basicPython import basics, flowControl, pythonFunctions
 
 
@@ -12,7 +13,7 @@ def menuOptions():
     menu = SelectMenu()
     menu.add_choices([
         "1. Introduction to Python",
-        "2. Intermediate Python",
+        "2. Animation in python",
         "3. Advanced Python"
     ])
     result = menu.select("Choice languages")
@@ -37,6 +38,8 @@ def menuOptions():
             flowControl.flowcontrolInpython()
         elif basicTopics == "3. Python Functions":
             pythonFunctions.pythonFunctions()
+    elif result == "2. Animation in python":
+        animatedfigures.animatedGraph()
 
 
 if __name__ == '__main__':
